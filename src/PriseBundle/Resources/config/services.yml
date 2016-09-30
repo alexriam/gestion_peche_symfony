@@ -1,0 +1,10 @@
+parameters:
+    prise.prise_form.class: PriseBundle\Form\Prise3Form
+
+services:
+#    prise.example:
+#        class: PriseBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]
+    prise.prise3form:
+        class: %prise.prise_form.class%
+        arguments: ["@doctrine.orm.entity_manager"]

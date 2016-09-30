@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <a href="http://gestion_peche.symfony.local/prise/prise_index">prise_index</a><BR/>
+    <a href="http://gestion_peche.symfony.local/prise/prise_show_all">prise_show_all</a><BR/>
+    <a href="http://gestion_peche.symfony.local/prise/prise_show_stat1">prise_show_stat1</a><BR/>
+    <a href="http://gestion_peche.symfony.local/prise/prise_show_stat_poisson_annee">prise_show_stat_poisson_annee</a><BR/>
+    <a href="http://gestion_peche.symfony.local/prise/prise_show_stat_poisson_moy_taille_annee">prise_show_stat_poisson_moy_taille_annee</a><BR/>
+    <a href="http://gestion_peche.symfony.local/prise/prise_add">prise_add</a><BR/>
+    <BR/>
+    Hello World! Debit showStat1
+    <br/>
+    <br/>
+
+    <div id="div_graph_poissonOnYear"></div>
+
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+        {% if poissonOnYear is defined %}
+            {{ gc_draw(poissonOnYear, 'div_graph_poissonOnYear') }}
+        {% endif %}
+    </script>
+{% endblock %}

@@ -1,0 +1,124 @@
+<?php
+
+namespace PriseBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Prise3
+ *
+ * @ORM\Table(name="prise_3")
+ * @ORM\Entity
+ */
+class Prise3
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="prise_id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $priseId;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="session_peche_id", type="smallint", nullable=false)
+     */
+    private $sessionPecheId;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="poisson", type="string", nullable=false)
+     */
+    private $poisson;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="lieu", type="string", length=250, nullable=false)
+     */
+    private $lieu;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="lieu_precis", type="string", length=250, nullable=false)
+     */
+    private $lieuPrecis;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="pecheur", type="string", length=250, nullable=false)
+     */
+    private $pecheur;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="appat", type="string", length=200, nullable=false)
+     */
+    private $appat;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date_prise", type="datetime", nullable=false)
+     */
+    private $datePrise;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="technique", type="string", length=200, nullable=false)
+     */
+    private $technique;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="leurre", type="string", length=255, nullable=false)
+     */
+    private $leurre;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="taille", type="boolean", nullable=false)
+     */
+    private $taille;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="poids", type="smallint", nullable=false)
+     */
+    private $poids;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="commentaire", type="text", length=65535, nullable=false)
+     */
+    private $commentaire;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="pos_lat", type="string", length=100, nullable=false)
+     */
+    private $posLat;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="pos_long", type="string", length=100, nullable=false)
+     */
+    private $posLong;
+
+
+}
+

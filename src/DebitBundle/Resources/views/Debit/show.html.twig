@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <a href="http://gestion_peche.symfony.local/debit/debit_index">debit_index</a><BR/>
+    <a href="http://gestion_peche.symfony.local/debit/debit_list">debit_list</a><BR/>
+    <a href="http://gestion_peche.symfony.local/debit/debit_add">debit_add</a><BR/>
+    <a href="http://gestion_peche.symfony.local/debit/debit_show_all">debit_show_all</a><BR/>
+    <a href="http://gestion_peche.symfony.local/debit/debit_show/1">debit_show/1</a><BR/>
+    <a href="http://gestion_peche.symfony.local/debit/debit_show_stat_test">debit_show_stat_test</a><BR/>
+    <a href="http://gestion_peche.symfony.local/debit/debit_show_stat1">debit_show_stat1</a><BR/>
+    <BR/>
+    Hello World! Debit show
+    <br/>
+    <br/>
+
+    -> nivEau_version1 : 
+    {{nivEau_version1.id}} - {{nivEau_version1.stationNom}} - {{nivEau_version1.stationId}} => {{nivEau_version1.debit}}
+    <br/>
+    -> nivEau_version2 : 
+    {{nivEau_version2.id}} - {{nivEau_version2.stationNom}} - {{nivEau_version2.stationId}} => {{nivEau_version2.debit}}
+    <br/>
+    -> nivEau_version3 : 
+    {{nivEau_version3.id}} - {{nivEau_version3.stationNom}} - {{nivEau_version3.stationId}} => {{nivEau_version3.debit}}
+    <br/>
+    -> nivEau_version4 : 
+    {{nivEau_version4.id}} - {{nivEau_version4.stationNom}} - {{nivEau_version4.stationId}} => {{nivEau_version4.debit}}
+    <br/>
+    <br/>
+
+    {% for unNivEau in aNiVEau %}
+    -> unNivEau : 
+    {{unNivEau.id}} - {{unNivEau.stationNom}} - {{unNivEau.stationId}} => {{unNivEau.debit}}
+    <br/>
+    {% endfor %}
+{% endblock %}
+

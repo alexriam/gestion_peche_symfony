@@ -1,0 +1,26 @@
+prise_homepage:
+    path:     /
+    defaults: { _controller: PriseBundle:Default:index }
+prise_prise_index:
+    path:     /prise_index
+    defaults: { _controller: PriseBundle:Prise:index }
+prise_prise_showAll:
+    path:     /prise_show_all
+    defaults: { _controller: PriseBundle:Prise:showAll }
+prise_prise_showStat1:
+    path:     /prise_show_stat1
+    defaults: { _controller: PriseBundle:Prise:showStat1 }
+prise_prise_showStatPoissonAnnee:
+    path:     /prise_show_stat_poisson_annee
+    defaults: { _controller: PriseBundle:Prise:showStatPoissonAnnee }
+prise_prise_showStatPoissonMoyTailleAnnee:
+    path:     /prise_show_stat_poisson_moy_taille_annee
+    defaults: { _controller: PriseBundle:Prise:showStatPoissonMoyTailleAnnee }
+prise_prise_add:
+    path:     /prise_add
+    defaults: { _controller: PriseBundle:Prise:add }
+prise_prise_ajax_infos_session_peche:
+    path:     /prise_ajax_infos_session_peche/{idSessionPeche}
+    defaults: { _controller: PriseBundle:Prise:priseAjaxInfosSessionPeche, idSessionPeche:1 }
+    requirements:
+        idSessionPeche:  \d+

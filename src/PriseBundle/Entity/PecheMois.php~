@@ -1,0 +1,61 @@
+<?php
+
+namespace PriseBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * PecheMois
+ *
+ * @ORM\Table(name="peche_mois")
+ * @ORM\Entity
+ */
+class PecheMois
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="mois_id", type="boolean", nullable=false)
+     */
+    private $moisId;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="mois_txt", type="string", length=25, nullable=false)
+     */
+    private $moisTxt;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="poisson", type="string", nullable=false)
+     */
+    private $poisson;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="lieu", type="string", length=255, nullable=false)
+     */
+    private $lieu;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="commentaire", type="string", length=255, nullable=false)
+     */
+    private $commentaire;
+
+
+}
+

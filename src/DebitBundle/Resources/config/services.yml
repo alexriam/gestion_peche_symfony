@@ -1,0 +1,28 @@
+parameters:
+    debit.debit_helper.class: DebitBundle\Helper\DebitHelper
+    debit.debit2_helper.class: DebitBundle\Helper\Debit2Helper
+    debit.general_helper.class: DebitBundle\Helper\GeneralHelper
+    debit.station_helper.class: DebitBundle\Helper\StationHelper
+
+services:
+#    debit.example:
+#        class: DebitBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]
+    debit.debit_helper:
+        class: %debit.debit_helper.class%
+        arguments: ["@doctrine.orm.entity_manager"]
+    debit.debit2_helper:
+        class: %debit.debit2_helper.class%
+        arguments: ["@doctrine.orm.entity_manager"]
+    debit.general_helper:
+        class: %debit.general_helper.class%
+        arguments: ["@doctrine.orm.entity_manager"]
+    debit.station_helper:
+        class: %debit.station_helper.class%
+        arguments: ["@doctrine.orm.entity_manager"]
+    debit.chart.data:
+        class: DebitBundle\Chart\ChartData
+        arguments: ['@doctrine.orm.entity_manager', '@service_container']
+    debit.chart:
+        class: DebitBundle\Chart\Chart
+        arguments: ['@debit.chart.data']

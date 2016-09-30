@@ -1,0 +1,92 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <a href="http://gestion_peche.symfony.local/prise/prise_index">prise_index</a><BR/>
+    <a href="http://gestion_peche.symfony.local/prise/prise_show_all">prise_show_all</a><BR/>
+    <a href="http://gestion_peche.symfony.local/prise/prise_show_stat1">prise_show_stat1</a><BR/>
+    <a href="http://gestion_peche.symfony.local/prise/prise_show_stat_poisson_annee">prise_show_stat_poisson_annee</a><BR/>
+    <a href="http://gestion_peche.symfony.local/prise/prise_show_stat_poisson_moy_taille_annee">prise_show_stat_poisson_moy_taille_annee</a><BR/>
+    <a href="http://gestion_peche.symfony.local/prise/prise_add">prise_add</a><BR/>
+    <BR/>
+    Hello World! Prise add
+    
+    {#{ form_start(form) }}
+    {{ form_widget(form) }}
+    {{ form_end(form) }#}
+    
+    <br/>
+    <br/>
+    {% if sMessageSurForm != '' %}
+    {{ sMessageSurForm }}
+    <br/>
+    <br/>
+    {% endif %}
+    Nb Prises : <span id="span_nb_prises"></span>
+    <br/>
+    <br/>
+    {{ form_start(form, {'attr': {'class': 'form'}}) }}
+        {{ form_row(form.priseid, {'attr': {'class': 'form-control'}}) }}
+        <table class="table">
+            <tr>
+                <td>
+                {{ form_row(form.sessionpecheid) }}
+                {#{ form_row(form.datePrise, { 'label': 'Date de prise' }) }#}
+                {#{ form_widget(form.datePrise, { 'label': 'Date de prise' }) }#}
+                <div>
+                    <label for="prise3_form_datePrise" class="required">Date de prise : </label>
+                    {{ form_widget(form.datePrise) }}
+                </div>
+                {{ form_row(form.poisson) }}
+                {{ form_row(form.lieu) }}
+                {{ form_row(form.lieuPrecis) }}
+                {{ form_row(form.pecheur) }}
+                {{ form_row(form.commentaire) }}
+                </td>
+                <td>
+                {{ form_row(form.appat) }}
+                {{ form_row(form.technique) }}
+                {{ form_row(form.leurre) }}
+                {{ form_row(form.taille) }}
+                {{ form_row(form.poids) }}
+                {{ form_row(form.posLat) }}
+                {{ form_row(form.posLong) }}  
+            </td>
+            </tr>
+        </table>
+        
+        <button type="submit" class="btn btn-default">Register!</button>
+    {{ form_end(form) }}
+    <br/>
+    
+    {% block javascripts %}
+        <script>
+            $(function() {
+                $("select[name='prise3_form[sessionpecheid]']").change(function(){
+                    //alert('abcd');
+                    $.ajax({
+                            type: "POST",
+                            url: "http://gestion_peche.symfony.local/prise/prise_ajax_infos_session_peche/"+$(this).val(),
+                            data: "dept="+$(this).val(),
+                            success: function(msgjson){ 
+                                //alert(msgjson.dateDeb);
+                                //var d = new Date("July 21, 1983 01:15:00");
+                                $("input[name='prise3_form[datePrise]']").val(msgjson.dateDeb);
+                                //$("input[name='datePrise']").val(standardPeriod(-6));
+                                //$("input[name='datePrise']").val('2016-04-10');
+                                $("input[name='prise3_form[lieu]']").val(msgjson.lieu);
+                                $("input[name='prise3_form[lieuPrecis]']").val(msgjson.lieuPrecis);
+                                $("input[name='prise3_form[commentaire]']").val(msgjson.commentaire);
+                                $("input[name='prise3_form[pecheur]']").val(msgjson.pecheur);
+                                $("input[name='prise3_form[poisson]']").val(msgjson.poissonDominant[0]);
+                                $("#span_nb_prises").html(msgjson.nbPrises);
+                        }
+                     });
+                });
+            });
+        </script>
+    {% endblock %}
+{% endblock %}
+    
+
+    
+    

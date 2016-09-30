@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <script src="{{ asset('js/jquery.min.js') }}"></script>
+        <script src="{{ asset('js/bootstrap.js') }}"></script>
+        <script src="{{ asset('js/bootstrap-table.js') }}"></script>
+        <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" />
+        <link rel="stylesheet" href="{{ asset('css/bootstrap-table.css') }}" />
+    </head>
+    <body>
+        <a href="http://gestion_peche.symfony.local/debit/debit_index">debit_index</a><BR/>
+        <a href="http://gestion_peche.symfony.local/prise/prise_index">prise_index</a><BR/>
+        <hr>
+        {% block body %}{% endblock %}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

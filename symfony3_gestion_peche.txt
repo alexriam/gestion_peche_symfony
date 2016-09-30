@@ -1,0 +1,33 @@
+php bin/console generate:bundle
+
+DebitBundle
+
+php bin/console cache:clear --env=prod
+
+php bin/console doctrine:generate:entities DebitBundle/Entity/NivEau
+php bin/console doctrine:schema:update --dump-sql
+php bin/console doctrine:schema:update --force
+
+php bin/console doctrine:mapping:import --force AcmeBlogBundle xml
+php bin/console doctrine:mapping:import DebitBundle annotation
+php bin/console doctrine:generate:entities DebitBundle/Entity/NivEau2
+
+composer update symfony/symfony
+
+composer require cmen/google-charts-bundle
+
+------------------------------------
+PriseBundle
+
+php bin/console doctrine:mapping:import PriseBundle annotation
+//suppression a la main de nivEau2 car déjà présent dans le debitBundle
+
+php bin/console doctrine:generate:entities PriseBundle/Entity/PecheMois
+php bin/console doctrine:generate:entities PriseBundle/Entity/Prise3
+php bin/console doctrine:generate:entities PriseBundle/Entity/SessionPeche3
+
+composer require beberlei/DoctrineExtensions
+
+
+
+

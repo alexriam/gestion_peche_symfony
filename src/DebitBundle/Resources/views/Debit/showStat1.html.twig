@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <a href="http://gestion_peche.symfony.local/debit/debit_index">debit_index</a><BR/>
+    <a href="http://gestion_peche.symfony.local/debit/debit_list">debit_list</a><BR/>
+    <a href="http://gestion_peche.symfony.local/debit/debit_add">debit_add</a><BR/>
+    <a href="http://gestion_peche.symfony.local/debit/debit_show_all">debit_show_all</a><BR/>
+    <a href="http://gestion_peche.symfony.local/debit/debit_show/1">debit_show/1</a><BR/>
+    <a href="http://gestion_peche.symfony.local/debit/debit_show_stat_test">debit_show_stat_test</a><BR/>
+    <a href="http://gestion_peche.symfony.local/debit/debit_show_stat1">debit_show_stat1</a><BR/>
+    <BR/>
+    Hello World! Debit showStat1
+    <br/>
+    <br/>
+
+    <div id="div_graph"></div>
+    <div id="div_graph_debitLignonDuForez"></div>
+    <div id="div_graph_debitLoire"></div>
+    <div id="div_graph_debitRhone"></div>
+
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+        {% if amountByYear is defined %}
+            {{ gc_draw(amountByYear, 'div_graph') }}
+        {% endif %}
+        {% if debitLignonDuForez is defined %}
+            {{ gc_draw(debitLignonDuForez, 'div_graph_debitLignonDuForez') }}
+        {% endif %}
+        {% if debitLoire is defined %}
+            {{ gc_draw(debitLoire, 'div_graph_debitLoire') }}
+        {% endif %}
+        {% if debitRhone is defined %}
+            {{ gc_draw(debitRhone, 'div_graph_debitRhone') }}
+        {% endif %}
+    </script>
+{% endblock %}

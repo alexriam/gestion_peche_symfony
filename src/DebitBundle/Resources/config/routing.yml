@@ -1,0 +1,26 @@
+debit_homepage:
+    path:     /
+    defaults: { _controller: DebitBundle:Default:index }
+debit_debit_index:
+    path:     /debit_index
+    defaults: { _controller: DebitBundle:Debit:index }
+debit_debit_list:
+    path:     /debit_list
+    defaults: { _controller: DebitBundle:Debit:list }
+debit_debit_add:
+    path:     /debit_add
+    defaults: { _controller: DebitBundle:Debit:add }
+debit_debit_show:
+    path:     /debit_show/{id}
+    defaults: { _controller: DebitBundle:Debit:show }
+    requirements:
+        page:  \d+
+debit_debit_show_all:
+    path:     /debit_show_all
+    defaults: { _controller: DebitBundle:Debit:showAll }
+debit_debit_show_stat_test:
+    path:     /debit_show_stat_test
+    defaults: { _controller: DebitBundle:Debit:showStatTest }
+debit_debit_show_stat1:
+    path:     /debit_show_stat1
+    defaults: { _controller: DebitBundle:Debit:showStat1 }

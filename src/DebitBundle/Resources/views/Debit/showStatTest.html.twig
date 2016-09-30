@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <a href="http://gestion_peche.symfony.local/debit/debit_index">debit_index</a><BR/>
+    <a href="http://gestion_peche.symfony.local/debit/debit_list">debit_list</a><BR/>
+    <a href="http://gestion_peche.symfony.local/debit/debit_add">debit_add</a><BR/>
+    <a href="http://gestion_peche.symfony.local/debit/debit_show_all">debit_show_all</a><BR/>
+    <a href="http://gestion_peche.symfony.local/debit/debit_show/1">debit_show/1</a><BR/>
+    <a href="http://gestion_peche.symfony.local/debit/debit_show_stat_test">debit_show_stat_test</a><BR/>
+    <a href="http://gestion_peche.symfony.local/debit/debit_show_stat1">debit_show_stat1</a><BR/>
+    <BR/>
+    Hello World! Debit showStatTest
+    <br/>
+    <br/>
+
+    <div id="div_graph"></div>
+
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+        {{ gc_draw(amountByYear, 'div_graph') }}
+    </script>
+{% endblock %}

@@ -1,0 +1,152 @@
+<?php
+namespace DebitBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Description of NivEau
+ *
+ * @author acrepet
+ */
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="niv_eau_2")
+ */
+class NivEau 
+{
+    /**
+     * @ORM\Column(type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $id;
+    
+    /**
+     * @ORM\Column(type="integer")
+     */
+    protected $station_id;
+    
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    protected $station_nom;
+    
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    protected $date_debit;
+    
+    /**
+     * @ORM\Column(type="integer")
+     */
+    protected $debit;
+    
+    
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set stationId
+     *
+     * @param integer $stationId
+     *
+     * @return NivEau
+     */
+    public function setStationId($stationId)
+    {
+        $this->station_id = $stationId;
+
+        return $this;
+    }
+
+    /**
+     * Get stationId
+     *
+     * @return integer
+     */
+    public function getStationId()
+    {
+        return $this->station_id;
+    }
+
+    /**
+     * Set stationNom
+     *
+     * @param string $stationNom
+     *
+     * @return NivEau
+     */
+    public function setStationNom($stationNom)
+    {
+        $this->station_nom = $stationNom;
+
+        return $this;
+    }
+
+    /**
+     * Get stationNom
+     *
+     * @return string
+     */
+    public function getStationNom()
+    {
+        return $this->station_nom;
+    }
+
+    /**
+     * Set dateDebit
+     *
+     * @param \DateTime $dateDebit
+     *
+     * @return NivEau
+     */
+    public function setDateDebit($dateDebit)
+    {
+        $this->date_debit = $dateDebit;
+
+        return $this;
+    }
+
+    /**
+     * Get dateDebit
+     *
+     * @return \DateTime
+     */
+    public function getDateDebit()
+    {
+        return $this->date_debit;
+    }
+
+    /**
+     * Set debit
+     *
+     * @param integer $debit
+     *
+     * @return NivEau
+     */
+    public function setDebit($debit)
+    {
+        $this->debit = $debit;
+
+        return $this;
+    }
+
+    /**
+     * Get debit
+     *
+     * @return integer
+     */
+    public function getDebit()
+    {
+        return $this->debit;
+    }
+}

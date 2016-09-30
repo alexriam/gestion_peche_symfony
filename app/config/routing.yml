@@ -1,0 +1,11 @@
+prise:
+    resource: "@PriseBundle/Resources/config/routing.yml"
+    prefix:   /prise
+
+debit:
+    resource: "@DebitBundle/Resources/config/routing.yml"
+    prefix:   /debit
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation

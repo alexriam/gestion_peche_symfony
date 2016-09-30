@@ -1,0 +1,75 @@
+<?php
+
+namespace PriseBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * SessionPeche3
+ *
+ * @ORM\Table(name="session_peche_3")
+ * @ORM\Entity
+ */
+class SessionPeche3
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="session_peche_id", type="smallint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $sessionPecheId;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date_deb", type="datetime", nullable=false)
+     */
+    private $dateDeb;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date_fin", type="datetime", nullable=false)
+     */
+    private $dateFin;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="pecheur", type="string", length=200, nullable=false)
+     */
+    private $pecheur;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="lieu", type="string", length=200, nullable=false)
+     */
+    private $lieu;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="lieu_precis", type="string", length=250, nullable=false)
+     */
+    private $lieuPrecis;
+
+    /**
+     * @var array
+     *
+     * @ORM\Column(name="poisson_dominant", type="simple_array", nullable=false)
+     */
+    private $poissonDominant;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="commentaire", type="text", length=65535, nullable=false)
+     */
+    private $commentaire;
+
+
+}
+

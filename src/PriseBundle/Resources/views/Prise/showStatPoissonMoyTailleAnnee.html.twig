@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <a href="http://gestion_peche.symfony.local/prise/prise_index">prise_index</a><BR/>
+    <a href="http://gestion_peche.symfony.local/prise/prise_show_all">prise_show_all</a><BR/>
+    <a href="http://gestion_peche.symfony.local/prise/prise_show_stat1">prise_show_stat1</a><BR/>
+    <a href="http://gestion_peche.symfony.local/prise/prise_show_stat_poisson_annee">prise_show_stat_poisson_annee</a><BR/>
+    <a href="http://gestion_peche.symfony.local/prise/prise_show_stat_poisson_moy_taille_annee">prise_show_stat_poisson_moy_taille_annee</a><BR/>
+    <a href="http://gestion_peche.symfony.local/prise/prise_add">prise_add</a><BR/>
+    <BR/>
+    Hello World! Debit showStatPoissonMoyTailleAnnee
+    <br/>
+    <br/>
+
+    <div id="div_graph_poissonOnYear"></div>
+    <div id="div_graph_poissonOnYearPrec"></div>
+    <div id="div_graph_poissonOnYearPrec2"></div>
+    <div id="div_graph_poissonOnYearPrec3"></div>
+
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+        {% if poissonOnYear is defined %}
+            {{ gc_draw(poissonOnYear, 'div_graph_poissonOnYear') }}
+        {% endif %}
+        {% if poissonOnYearPrec is defined %}
+            {{ gc_draw(poissonOnYearPrec, 'div_graph_poissonOnYearPrec') }}
+        {% endif %}
+        {% if poissonOnYearPrec2 is defined %}
+            {{ gc_draw(poissonOnYearPrec2, 'div_graph_poissonOnYearPrec2') }}
+        {% endif %}
+        {% if poissonOnYearPrec3 is defined %}
+            {{ gc_draw(poissonOnYearPrec3, 'div_graph_poissonOnYearPrec3') }}
+        {% endif %}
+    </script>
+{% endblock %}
